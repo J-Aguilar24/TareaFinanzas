@@ -1,15 +1,26 @@
+saldo = 0
 class Ingreso:
-    saldo = 0
-    def __init__(self, ingreso):
-        self.ingreso = ingreso
+    def __init__(self):
+        self.ingreso = 0
 
-    def aumento(self):
-        saldo += self.ingreso
-        return saldo
+    def aumento(self, ingreso):
+        self.ingreso += saldo
+
+    def showIngresos(self):
+        return self.ingreso
 
 class Egreso:
     def __init__(self, egreso):
         self.egreso = egreso
+        self.listEgreso = []
 
-class Finanzas(Ingreso):
-    pass
+    def reduccion(self, egresos):
+        self.egreso += saldo
+
+
+class Finanzas(Ingreso, Egreso):
+    def getSaldo(self):
+        return saldo
+
+    def transacciones(self):
+        return Egreso.reduccion, Ingreso.aumento 
